@@ -10,7 +10,7 @@ namespace VolFx
     public sealed class OldMovieVol : VolumeComponent, IPostProcessComponent
     {
         public ClampedFloatParameter         m_Grain    = new ClampedFloatParameter(0f, 0f, 1f);
-        public NoiseParameter                m_Noise    = new NoiseParameter(OldMoviePass.Noise.A, false);
+        public NoiseParameter                m_Noise    = new NoiseParameter(OldMoviePass.Noise.None, false);
         public ClampedFloatParameter         m_Jolt     = new ClampedFloatParameter(0f, 0f, 1f);
         public NoInterpClampedFloatParameter m_Fps      = new NoInterpClampedFloatParameter(16, 0f, 60);
         public ColorParameter                m_Vignette = new ColorParameter(Color.clear);
