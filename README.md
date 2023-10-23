@@ -1,6 +1,7 @@
 # OldMoviefx
 
-OldMoview post effect for Unity Urp</br>
+OldMoview post effect for Unity Urp, </br>
+Controlled via volume profile, works as render feature
 
 ![_cover](https://github.com/NullTale/com.nulltale.oldmoviefx/assets/1497430/ea45efe7-6d9e-4f18-a8d5-d3d711440507)
 
