@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
 
-//  VolFx © NullTale - https://twitter.com/NullTale/
+//  OldMovieFx © NullTale - https://twitter.com/NullTale/
 namespace VolFx
 {
     public static class Utils

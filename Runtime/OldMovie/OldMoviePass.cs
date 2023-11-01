@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-//  VolFx © NullTale - https://twitter.com/NullTale/
+//  OldMovieFx © NullTale - https://twitter.com/NullTale/
 namespace VolFx
 {
     [ShaderName("Hidden/VolFx/OldMovie")]

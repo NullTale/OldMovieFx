@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
-//  VolFx © NullTale - https://twitter.com/NullTale/
+//  OldMovieFx © NullTale - https://twitter.com/NullTale/
 namespace VolFx.Editor
 {
     [CustomPropertyDrawer(typeof(Optional<>))]

@@ -1,6 +1,6 @@
 using System;
 
-//  VolFx © NullTale - https://twitter.com/NullTale/
+//  OldMovieFx © NullTale - https://twitter.com/NullTale/
 namespace VolFx
 {
     /// <summary>

@@ -5,6 +5,7 @@ using UnityEditorInternal;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
+//  OldMovieFx © NullTale - https://twitter.com/NullTale/
 namespace VolFx.Editor
 {
     [CustomPropertyDrawer(typeof(VolFx.Pass), true)]
