@@ -1,4 +1,4 @@
-# OldMoviefx
+# OldMovieFx
 
 OldMoview post effect for Unity Urp, </br>
 Controlled via volume profile, works as render feature
