@@ -5,6 +5,14 @@ Controlled via volume profile, works as render feature
 
 ![_cover](https://github.com/NullTale/OldMovieFx/assets/1497430/8c9c33b5-1a5d-4b92-b2ee-199fb83f97f9)
 
+## Part of Artwork Project
+
+* [Vhs](https://github.com/NullTale/VhsFx)
+* [OldMovie]
+* [GradientMap](https://github.com/NullTale/GradientMapFilter)
+* [ScreenOutline](https://github.com/NullTale/OutlineFilter)
+* [ImageFlow](https://github.com/NullTale/FlowFx)
+
 ## Usage
 Install via Unity [PackageManager](https://docs.unity3d.com/Manual/upm-ui-giturl.html)
 ```
