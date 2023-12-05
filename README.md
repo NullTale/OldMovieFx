@@ -1,8 +1,5 @@
 # OldMovieFx
 
-![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/NullTale)
-![Static Badge](https://img.shields.io/badge/Boosty-support?logo=boosty&labelColor=white&color=white&link=https%3A%2F%2Fboosty.to%2Fnulltale)
-
 OldMovie post effect for Unity Urp, </br>
 Controlled via volume profile, works as render feature
 
