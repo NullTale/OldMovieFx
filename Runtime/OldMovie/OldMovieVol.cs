@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 //  OldMovieFx © NullTale - https://twitter.com/NullTale/
 namespace VolFx
 {
-    [Serializable, VolumeComponentMenu("Vol/Old Movie")]
+    [Serializable, VolumeComponentMenu("VolFx/Old Movie")]
     public sealed class OldMovieVol : VolumeComponent, IPostProcessComponent
     {
         public ClampedFloatParameter         m_Grain    = new ClampedFloatParameter(0f, 0f, 1f);

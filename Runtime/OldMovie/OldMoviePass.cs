@@ -116,7 +116,7 @@ namespace VolFx
             return true;
         }
 
-        internal override bool _editorValidate => _clips == null || _clips.Length == 0 || _grains == null || _grains.Length == 0;
+        protected override bool _editorValidate => _clips == null || _clips.Length == 0 || _grains == null || _grains.Length == 0 || _grains[0] == null || _clips[1]._data[0] == null;
 
         protected override void _editorSetup(string folder, string asset)
         {

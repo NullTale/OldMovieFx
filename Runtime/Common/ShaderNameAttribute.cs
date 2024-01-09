@@ -1,3 +1,5 @@
+#if !VOL_FX
+
 using System;
 
 //  OldMovieFx © NullTale - https://twitter.com/NullTale/
@@ -17,3 +19,5 @@ namespace VolFx
         }
     }
 }
+
+#endif
