@@ -9,6 +9,7 @@ Controlled via volume profile, works as render feature
 ![_cover](https://github.com/NullTale/OldMovieFx/assets/1497430/8c9c33b5-1a5d-4b92-b2ee-199fb83f97f9)
 
 ## Part of Artwork Project
+All effects can work individually or as a part of [VolFx](https://github.com/NullTale/VolFx) framework
 
 * [Vhs](https://github.com/NullTale/VhsFx)
 * [OldMovie]
@@ -16,6 +17,7 @@ Controlled via volume profile, works as render feature
 * [ScreenOutline](https://github.com/NullTale/OutlineFilter)
 * [ImageFlow](https://github.com/NullTale/FlowFx)
 * [Pixelation](https://github.com/NullTale/PixelationFx)
+* ...
 
 ## Usage
 Install via Unity [PackageManager](https://docs.unity3d.com/Manual/upm-ui-giturl.html)
