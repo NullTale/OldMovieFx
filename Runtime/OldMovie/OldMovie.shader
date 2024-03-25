@@ -27,7 +27,7 @@ Shader "Hidden/VolFx/OldMovie"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl" 
             #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
 
-            float4 _Vignette;   // x - intensity, y - power, z - grain, 
+            float4 _Vignette;   // x - intensity, y - power, z - grain, w - noise alpha
             float4 _Grain;
             float4 _Tint;
             float4 _Jolt;
@@ -70,7 +70,7 @@ Shader "Hidden/VolFx/OldMovie"
                 grain = abs((grain - 0.5) * _Vignette.z);
                 
                 half3 noise = tex2D(_NoiseTex, i.uv + _Jolt.xy).rgb;
-                main.rgb += noise;
+                main.rgb += noise * _Vignette.w;
 
                 main.rgb += grain.rrr;
                 main.rgb  = lerp(main.rgb, _Tint.rgb, (1 - vig) * _Tint.a);

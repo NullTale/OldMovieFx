@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,7 +9,7 @@ using Random = UnityEngine.Random;
 namespace VolFx
 {
     [ShaderName("Hidden/VolFx/OldMovie")]
-    public class OldMoviePass : VolFx.Pass
+    public class OldMoviePass : VolFxProc.Pass
     {
         private static readonly int s_Vignette = Shader.PropertyToID("_Vignette");
         private static readonly int s_Grain    = Shader.PropertyToID("_Grain");
@@ -17,11 +18,11 @@ namespace VolFx
         private static readonly int s_NoiseTex = Shader.PropertyToID("_NoiseTex");
         private static readonly int s_Tint     = Shader.PropertyToID("_Tint");
         
-        [Tooltip("Vignette power")]
+        [Tooltip("Vignette power")] [Range(0f, 3f)]
         public float   _vignette    = 0.33f;
         [Tooltip("Vignette intensity range")]
         public Vector2 _flickering = new Vector2(5.5f, 10f);
-        [Tooltip("Frame Jolt")]
+        [Tooltip("Frame Jolt range, interpolated from volume profile")]
         public Vector2 _jolt = new Vector2(-0.01f, 0.07f);
         
         [Tooltip("Default frame rate of noise and vignette deviations")]
@@ -88,7 +89,6 @@ namespace VolFx
                 return false;
             
             _grainTex  = _grains[(int)settings.m_GrainTex.value];
-			
             _noiseClip = _clips[(int)settings.m_Noise.value];
 
             var fps = settings.m_Fps.overrideState ? settings.m_Fps.value : _fps;
@@ -106,7 +106,7 @@ namespace VolFx
             
             var grain = settings.m_Grain.value;
 
-            mat.SetVector(s_Vignette, new Vector4(_vig, _vignette, grain, 1f));
+            mat.SetVector(s_Vignette, new Vector4(_vig, _vignette, grain, settings.m_NoiseAlpha.value));
             mat.SetVector(s_Grain, _tiling);
             mat.SetVector(s_Jolt, _joltValue);
             mat.SetColor(s_Tint, settings.m_Vignette.value);
@@ -121,16 +121,17 @@ namespace VolFx
         protected override void _editorSetup(string folder, string asset)
         {
 #if UNITY_EDITOR
+            var sep = Path.DirectorySeparatorChar;
             _grains = texFrom($"{folder}\\Grain");
-            
             _clips = new List<Clip>()
-                .Append(new Clip(){_data = new Texture2D[]{Texture2D.blackTexture}})
-                .Append(new Clip(){_data = texFrom($"{folder}\\Noise\\A")})
-                .Append(new Clip(){_data = texFrom($"{folder}\\Noise\\B")})
-                .Append(new Clip(){_data = texFrom($"{folder}\\Noise\\C")})
-                .Append(new Clip(){_data = texFrom($"{folder}\\Noise\\D")})
-                .Append(new Clip(){_data = texFrom($"{folder}\\Noise\\E")})
-                .ToArray();
+                     .Append(new Clip(){_data = new Texture2D[]{Texture2D.blackTexture}})
+                     .Append(new Clip(){_data = texFrom($"{folder}{sep}Noise{sep}A")})
+                     .Append(new Clip(){_data = texFrom($"{folder}{sep}Noise{sep}B")})
+                     .Append(new Clip(){_data = texFrom($"{folder}{sep}Noise{sep}C")})
+                     .Append(new Clip(){_data = texFrom($"{folder}{sep}Noise{sep}D")})
+                     .Append(new Clip(){_data = texFrom($"{folder}{sep}Noise{sep}E")})
+                     .ToArray();
+
 
             // -----------------------------------------------------------------------
             Texture2D[] texFrom(string path)
