@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-//  OldMovieFx © NullTale - https://twitter.com/NullTale/
+//  OldMovieFx © NullTale - https://x.com/NullTale
 namespace VolFx
 {
     public class OldMovieFx : ScriptableRendererFeature

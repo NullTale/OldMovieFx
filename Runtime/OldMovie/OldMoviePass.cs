@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 namespace VolFx
 {
     [ShaderName("Hidden/VolFx/OldMovie")]
-    public class OldMoviePass : VolFxProc.Pass
+    public class OldMoviePass : VolFx.Pass
     {
         private static readonly int s_Vignette = Shader.PropertyToID("_Vignette");
         private static readonly int s_Grain    = Shader.PropertyToID("_Grain");
