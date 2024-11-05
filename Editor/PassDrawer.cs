@@ -152,7 +152,7 @@ namespace VolFx.Editor
         public static void CopyrightInfo()
         {
             var type = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name.Replace(".Editor", "");
-            var link = "https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/270015";
+            var link = "https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/270021";
             
             var ssc = SessionState.GetInt($"CopyrightInfo_{type}_33", UnityEngine.Random.Range(3, 7 + 1));
             SessionState.SetInt($"CopyrightInfo_{type}_33", ssc + 1);
